@@ -1,0 +1,26 @@
+<%- include('./partials/header') -%>
+
+    <div class="container" style="background-image: url(https://blitzen.com/blog/wp-content/uploads/new-tech.jpg);background-size: cover;width: 100%; padding-bottom: 8.5em; padding-top: 5em;">
+        <div class="row">
+            <div style="width: 30%; margin: 20px auto;">
+                <h2 style="text-align:center;color: aliceblue;">
+                    Sign Up
+                </h2>
+                <p style="color: aliceblue;">All categories are required</p>
+                <form action="/signup" method="post">
+                    <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username">
+                    </div>
+                    <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-group"><input class="form-control" type="text" name="avatar" placeholder="Profile Pic:URL">
+                    </div>
+                    <div class="form-group"><input class="form-control" type="text" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-light" data-toggle="tooltip" data-placement="right" title="Welcome!!" type="submit">Signup!!</button></div>
+                    <a style="color:aliceblue;" href="/login">Go back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer') -%>

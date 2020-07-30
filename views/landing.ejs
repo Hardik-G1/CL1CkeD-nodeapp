@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>C!1CkeD</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        a,
+        a:focus,
+        a:hover {
+            color: #fff;
+        }
+        /* Custom default button */
+        
+        .btn-secondary,
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            color: #333;
+            text-shadow: none;
+            /* Prevent inheritance from `body` */
+            background-color: #fff;
+            border: .05rem solid #fff;
+        }
+        /*
+         * Base structure
+         */
+        
+        html,
+        body {
+            height: 100%;
+            background-color: #333;
+        }
+        
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            color: #fff;
+            text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+            box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+        }
+        
+        .cover-container {
+            max-width: 84em;
+        }
+        /*
+         * Header
+         */
+        
+        .masthead {
+            margin-bottom: 2rem;
+        }
+        
+        .masthead-brand {
+            margin-bottom: 0;
+        }
+        
+        .nav-masthead .nav-link {
+            padding: .25rem 0;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .5);
+            background-color: transparent;
+            border-bottom: .25rem solid transparent;
+        }
+        
+        .nav-masthead .nav-link:hover,
+        .nav-masthead .nav-link:focus {
+            border-bottom-color: rgba(255, 255, 255, .25);
+        }
+        
+        .nav-masthead .nav-link+.nav-link {
+            margin-left: 1rem;
+        }
+        
+        .nav-masthead .active {
+            color: #fff;
+            border-bottom-color: #fff;
+        }
+        
+        @media (min-width: 48em) {
+            .masthead-brand {
+                float: left;
+            }
+            .nav-masthead {
+                float: right;
+            }
+        }
+        /*
+         * Cover
+         */
+        
+        .cover {
+            padding: 0 1.5rem;
+        }
+        
+        .cover .btn-lg {
+            padding: .75rem 1.25rem;
+            font-weight: 700;
+        }
+        /*
+         * Footer
+         */
+        
+        .mastfoot {
+            color: rgba(255, 255, 255, .5);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+</head>
+
+<body class="text-center" style="background-image: url(https://res.cloudinary.com/dtarijclg/image/upload/v1596085352/6/i0bammdxojyexvyb7dyf.jpg); background-size: cover;">
+    <% if(error && error.length > 0){ %>
+        <br>
+        <div class="alert alert-danger" role="alert">
+            <h2>
+                <%= error %>
+            </h2>
+        </div>
+        <% } %>
+            <% if(success && success.length > 0){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= success %>
+                </div>
+                <% } %>
+
+                    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+                        <header class="masthead mb-auto" style="font-size: 1.5rem;">
+                            <div class="inner">
+                                <h2 class="masthead-brand">C!1CkeD</h2>
+                                <nav class="nav nav-masthead justify-content-center">
+                                    <a class="nav-link active" href="/home">Home</a>
+                                    <a class="nav-link" href="/c">Content</a>
+                                    <a class="nav-link" href="/login">Login</a>
+                                </nav>
+                            </div>
+                        </header>
+
+                        <main role="main" class="inner cover">
+                            <h1 class="cover-heading">C!1CkeD</h1>
+                            <p class="lead">C!1CkeD is a online image gallery for building simple and beautiful galleries. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                            <p class="lead">
+                                <a href="/c" class="btn btn-lg btn-secondary">Browse Gallery</a>
+                            </p>
+                        </main>
+
+                        <footer class="mastfoot mt-auto">
+                            <div class="inner">
+                                <p>C!1CkeD, by <a href="#">@ronnie</a>.</p>
+                            </div>
+                        </footer>
+                    </div>
+
+                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<%- include('../partials/header') -%>
+    <div class="container">
+        <h2>Users</h2>
+        <% user.forEach(function(user){%>
+            <ul>
+                <li>
+                    <%= user.username%>
+                </li>
+                <%=user.email%>
+                    <br>
+                    <%=user.reputation%>
+                        <br>
+
+                        <%if(user.isadmin){%>
+                            admin
+                            <% } else{%>
+                                normal user
+                                <%}%>
+
+            </ul>
+            <%})%>
+    </div>
+
+    <%- include('../partials/footer') -%>

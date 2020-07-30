@@ -1,0 +1,19 @@
+<%- include('../partials/header') -%>
+    <br>
+    <style>
+        body {
+            background-color: #151515;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <%for (var i=0;i<campgrounds.video1.length;i++){%>
+                <img loading="lazy" src="<%- campgrounds.video1[i].url%>" class="d-block w-100" alt="...">
+                <%}%>
+
+
+
+
+        </div>
+    </div>
+    <%- include('../partials/footer') -%>

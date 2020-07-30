@@ -1,0 +1,49 @@
+<%- include('../partials/header') -%>
+    <br>
+    <div class="container">
+        <div class="row">
+
+
+            <%if(campgrounds.video1[0].format==="mp4"){%>
+                <video style="max-width: -webkit-fill-available; height: auto;" src="<%= campgrounds.video1[0].url%>" controls>
+                </video>
+                <% for (var i=1;i<campgrounds.video1.length;i++){%>
+                    <a class="btn btn-info" href="<%-campgrounds.video1[i].url%>">EP <%=i+1%>   </a>
+                    <%}%>
+                        <%} else {%>
+
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-interval="false">
+                                        <img src="<%= campgrounds.video1[0].url%>" class="d-block w-100" alt="...">
+                                    </div>
+                                    <%for (var i=1;i<campgrounds.video1.length;i++){%>
+                                        <div class="carousel-item" data-interval="false">
+                                            <img loading="lazy" src="<%- campgrounds.video1[i].url%>" class="d-block w-100" alt="...">
+                                        </div>
+                                        <%}%>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                    <span aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                    <span aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            <a class="btn btn-secondary" href="/c/<%= campgrounds._id %>/all">all pages </a>
+                            <%}%>
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <%- include('../partials/footer') -%>

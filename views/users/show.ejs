@@ -1,0 +1,96 @@
+<%- include('../partials/header')-%>
+
+    <div class="container">
+        <div class="row" style="display:flex; flex-wrap: wrap;">
+            <div class="col-lg-3">
+                <div class="card">
+                    <img class="card-img" src="<%=user.avatar%>" alt="">
+                    <div style="background-color: whitesmoke; border: 0px;" class="card-body">
+                        <h5 class="card-title">
+                            <%=user.username%>
+                        </h5>
+                        <p class="card-text">
+                            <a href="mailto:<%=user.email%>">
+                                <%=user.email%>
+                            </a>
+                            <br>
+                            <%=user.reputation%>
+                        </p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis labore iusto quibusdam quasi esse accusantium quia aliquid architecto cum itaque voluptatibus ullam, veritatis repellat. Sit omnis ex dolor adipisci quaerat.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="container">
+                    <div class="row">
+                        <% campgrounds.forEach(function(campgrounds){%>
+                            <div class=" col-lg-3 col-sm-6">
+                                <%if(campgrounds.video1[0].format==="mp4"){%>
+                                    <a href="/c/<%= campgrounds._id %>"><video style="height: 8rem; margin-top: 24px; " poster="https://cdn.shopify.com/s/files/1/2018/8867/files/play-button.png">   
+                                        Your browser does not support the video tag.
+                                      </video></a>
+                                    <%}else{%>
+                                        <a href="/c/<%= campgrounds._id %>"><img style="margin-top:1.5em;" class="img-fluid img-thumbnail" src="<%= campgrounds.video1[0].url%>"></a>
+                                        <%}%>
+
+                                            <div class="caption">
+                                                <%= campgrounds.name%>
+                                            </div>
+                                            <p>
+                                                <a href="/c/<%= campgrounds._id %>">More info</a>
+
+                                            </p>
+                                            <p>
+                                                <%=campgrounds.video1.length%> pages</p>
+                            </div>
+                            <%});%>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <hr>
+        <div class="row" style="display:flex; flex-wrap: wrap;">
+
+
+            <% if(currentuser && user._id.equals(currentuser._id)|| currentuser && currentuser.isadmin){%>
+                <h3>Favorites</h3>
+                <hr>
+                <% user.favorites.forEach(function(camp){%>
+                    <div class=" col-lg-2 col-md-4">
+                        <%if(camp.video1[0].format==="mp4"){%>
+                            <a href="/c/<%= camp._id %>"> <video style="height: 8rem; " poster="https://cdn.shopify.com/s/files/1/2018/8867/files/play-button.png">   
+                                Your browser does not support the video tag.
+                              </video></a>
+                            <%}else{%>
+                                <a href="/c/<%= camp._id %>"> <img class="img-fluid img-thumbnail" src="<%= camp.video1[0].url%>"></a>
+                                <%}%>
+                                    <div>
+
+                                    </div>
+                                    <strong><%=camp.name%></strong>
+                                    <% if(currentuser && camp.author.id.equals(currentuser._id)){%>
+                                        -Owned
+                                        <%}%>
+                                            <p>
+                                                <%=camp.description%>
+                                            </p>
+                    </div>
+                    <%});%>
+                        <%};%>
+        </div>
+    </div>
+
+
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+    <%- include('../partials/footer')-%>

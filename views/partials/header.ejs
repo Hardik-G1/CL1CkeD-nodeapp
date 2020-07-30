@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=q, initial-scale=1.0">
+    <title>C!1CkeD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <style>
+        /* The sidebar menu */
+        
+        #mySidebar.active {
+            width: 250px;
+        }
+        
+        #main1.baa {
+            margin-left: 250px;
+        }
+        
+        .sidebar {
+            height: 100%;
+            /* 100% Full-height */
+            width: 0;
+            /* 0 width - change this with JavaScript */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Stay on top */
+            top: 0;
+            left: 0;
+            background-color: #111;
+            /* Black*/
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in the sidebar */
+        }
+        /* The sidebar links */
+        
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        /* When you mouse over the navigation links, change their color */
+        
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+        /* Position and style the close button (top right corner) */
+        
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        /* The button used to open the sidebar */
+        
+        .openbtn {
+            font-size: 18.5px;
+            cursor: pointer;
+            background-color: #343a40;
+            color: white;
+            border: none;
+        }
+        
+        .openbtn:hover {
+            background-color: #444;
+        }
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        
+        #main {
+            transition: margin-left .5s;
+            /* If you want a transition effect */
+            padding: 0px;
+        }
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+        
+        body {
+            padding-bottom: 3rem;
+            color: #5a5a5a;
+        }
+    </style>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+        
+        #gar {
+            width: 100%;
+            padding: 0;
+        }
+        
+        .caption-full {
+            padding: 9px;
+        }
+        
+        #delform {
+            display: inline;
+        }
+        
+        .btn-info {
+            padding: 3px 12px;
+        }
+        
+        #hover1 {
+            background-color: transparent;
+        }
+        
+        #hover1:hover {
+            background-color: #15141F;
+        }
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div id="mySidebar" class="sidebar navbar-brand">
+                <a href="javascript:void(0)" class="closebtn" onclick="openNav()">&times;</a>
+                <%if(currentuser){%>
+                    <a href="/users/<%=currentuser._id%>">My Profile</a>
+                    <% }else{%>
+                        <a href="/login">Login</a>
+                        <a href="/signup">Sign Up</a>
+                        <%}%>
+                            <a href="/">Homepage</a>
+                            <a href="/c">Content</a>
+                            <a href="/users">Users</a>
+                            <a href="/c/n">Add New</a>
+            </div>
+            <div id="main1">
+                <button class="openbtn" onclick="openNav()">&#9776; Menu</button>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/c">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <form action="/c" method="GET" class="form-inline mt-2 mt-md-0">
+                    <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button value="Search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <% if(error && error.length>0){%>
+        <div class="container">
+
+            <% if(error && error.length>0){%>
+                <br>
+                <div class="alert alert-danger" role="alert">
+                    <%=error%>
+                </div>
+                <%}%>
+                    <%if(success && success.length>0){%>
+                        <br>
+                        <div class="alert alert-success" role="alert">
+                            <%=success%>
+                        </div>
+                        <%}%>
+        </div>
+        <%}%>
